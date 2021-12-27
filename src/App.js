@@ -3,29 +3,43 @@ import "./App.css";
 import reactDom from "react-dom";
 
 function App() {
-  var person ={
-    name: "dr. Mahfuz",
-    job: "Singer"
-  }
-
-  var person2 ={
-    name: "Eva Rahman",
-    job: "Singer"
-  }
-
-  var style ={
-    color: 'red',
-    backgroundColor:'yellow'
-  }
+  //const nayoks = ['Anwar', 'Zafor iqbal','alomgir', 'salman']
+  const products = [
+    {name: 'Photoshop', price: '$99.99'},
+    {name: 'PDF reader', price: '$6.99'},
+    {name: 'Illustrator', price: '$96.99'}
+  ]
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h3 style={style} >1. Popular Singer: {person.name + " " + person.job} </h3>
-        <h3 style={{color: 'black', background: 'yellow'}}>2. Popular Singer: {person2.name + " " + person2.job} </h3>
+        <Product product={products[0]}></Product>
+        <Product product={products[1]}></Product>
+        <Product product={products[2]}></Product>
+        {/* <Product name={products[1]}></Product>
+        <Product name={products[2]}></Product> */}
       </header>
     </div>
   );
+}
+
+function Product(props){
+  const productStyle={
+      border: '2px solid red',
+      borderRadius: '5px',
+      backgroundColor: 'cyan',
+      height:'250px',
+      width: '250px',
+      float: 'left',
+      margin: '5px'
+  }
+  const {name,price} = props.product;
+  return(
+      <div style={productStyle}>
+          <h5>{name}</h5>
+          <h5>{price}</h5>
+          <button> Buy Now</button>
+      </div>
+  )
 }
 
 export default App;
