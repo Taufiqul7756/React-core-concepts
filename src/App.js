@@ -3,15 +3,43 @@ import "./App.css";
 import reactDom from "react-dom";
 
 function App() {
-  //const nayoks = ['Anwar', 'Zafor iqbal','alomgir', 'salman']
+  const nayoks = ['Anwar', 'Zafor iqbal','Sakib', 'salman','Bappi','Shuvo']
   const products = [
     {name: 'Photoshop', price: '$99.99'},
     {name: 'PDF reader', price: '$6.99'},
-    {name: 'Illustrator', price: '$96.99'}
+    {name: 'Illustrator', price: '$96.99'},
+    {name: 'Premiere El', price: '$296.99'}
   ]
+
+  const friends =[
+    {name:'Taufiq', job: 'Student'},
+    {name:'Tazwar', job: 'Prothom-alo'},
+    {name:'Saiful', job: 'Student'},
+    {name:'Ridu', job: 'Student'}
+  ]
+  const nayokNames = nayoks.map(nayok=> nayok);
+  console.log(nayokNames);
   return (
     <div className="App">
       <header className="App-header">
+        <ul>
+          {
+            nayoks.map(nayok=><li>{nayok}</li> )
+          }
+          {
+            products.map(product=> <li>{product.name}</li>)
+          }
+        </ul>
+        <ul>
+          {
+            friends.map(friends=> <li>{friends.name} </li>)
+          }
+        </ul>
+        {
+          products.map(pd=><Product product ={pd}></Product>)
+        }
+
+
         <Product product={products[0]}></Product>
         <Product product={products[1]}></Product>
         <Product product={products[2]}></Product>
