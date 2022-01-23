@@ -8,4 +8,4 @@ const friends =[
 
 
 const total = friends.reduce( (sum,friend)=>sum + friend.money,0);
-console.log(total);
+console.log(total); 
